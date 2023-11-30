@@ -85,20 +85,20 @@ def login_user():
 
 def show_registration_frame():
     login_frame.pack_forget()
-    registration_frame.pack(expand=True, fill='both')
+    registration_frame.pack()
 
 def show_login_frame():
     registration_frame.pack_forget()
-    login_frame.pack(expand=True, fill='both')
+    login_frame.pack()
 
 def show_main_frame():
     login_frame.pack_forget()
     registration_frame.pack_forget()
-    main_frame.pack(expand=True, fill='both')
+    main_frame.pack()
 
 root = tk.Tk()
 root.title("LOCK BOX")
-root.geometry("1000x480")
+root.geometry("1920x1080")
 
 key = generate_key()
 
@@ -112,6 +112,7 @@ if not os.path.isfile('users.json'):
     with open('users.json', 'w') as user_file:
         json.dump(example_users, user_file)
 
+# Create ThemedStyle with the theme
 style = ThemedStyle(root)
 style.set_theme("equilux")
 
@@ -119,64 +120,64 @@ registration_frame = ttk.Frame(root)
 login_frame = ttk.Frame(root)
 main_frame = ttk.Frame(root)
 
-font_style = ("Poppins", 15)
+font_style = ("Poppins", 14)
 button_style = ("Poppins", 12, "bold")
 
 register_username_label = ttk.Label(registration_frame, text="Username:", font=font_style)
-register_username_label.pack(padx=20, pady=10)
+register_username_label.pack()
 register_username_entry = ttk.Entry(registration_frame, font=font_style)
-register_username_entry.pack(padx=20, pady=10)
+register_username_entry.pack()
 
 register_password_label = ttk.Label(registration_frame, text="Password:", font=font_style)
-register_password_label.pack(padx=20, pady=10)
+register_password_label.pack()
 register_password_entry = ttk.Entry(registration_frame, show="*", font=font_style)
-register_password_entry.pack(padx=20, pady=10)
+register_password_entry.pack()
 
 register_button = ttk.Button(registration_frame, text="Register", command=register_user, style="TButton")
-register_button.pack(pady=20)
+register_button.pack()
 
 switch_to_login_button = ttk.Button(registration_frame, text="Already have an account? Login", command=show_login_frame, style="TButton")
-switch_to_login_button.pack(pady=10)
+switch_to_login_button.pack()
 
 login_username_label = ttk.Label(login_frame, text="Username:", font=font_style)
-login_username_label.pack(padx=20, pady=10)
+login_username_label.pack()
 login_username_entry = ttk.Entry(login_frame, font=font_style)
-login_username_entry.pack(padx=20, pady=10)
+login_username_entry.pack()
 
 login_password_label = ttk.Label(login_frame, text="Password:", font=font_style)
-login_password_label.pack(padx=20, pady=10)
+login_password_label.pack()
 login_password_entry = ttk.Entry(login_frame, show="*", font=font_style)
-login_password_entry.pack(padx=20, pady=10)
+login_password_entry.pack()
 
 login_button = ttk.Button(login_frame, text="Login", command=login_user, style="TButton")
-login_button.pack(pady=20)
+login_button.pack()
 
 switch_to_registration_button = ttk.Button(login_frame, text="Don't have an account? Register", command=show_registration_frame, style="TButton")
-switch_to_registration_button.pack(pady=10)
+switch_to_registration_button.pack()
 
 website_label = ttk.Label(main_frame, text="Website:", font=font_style)
-website_label.pack(padx=20, pady=10)
+website_label.pack()
 website_entry = ttk.Entry(main_frame, font=font_style)
-website_entry.pack(padx=20, pady=10)
+website_entry.pack()
 
 username_label = ttk.Label(main_frame, text="Username:", font=font_style)
-username_label.pack(padx=20, pady=10)
+username_label.pack()
 username_entry = ttk.Entry(main_frame, font=font_style)
-username_entry.pack(padx=20, pady=10)
+username_entry.pack()
 
 password_label = ttk.Label(main_frame, text="Password:", font=font_style)
-password_label.pack(padx=20, pady=10)
+password_label.pack()
 password_entry = ttk.Entry(main_frame, font=font_style)
-password_entry.pack(padx=20, pady=10)
+password_entry.pack()
 
 generate_button = ttk.Button(main_frame, text="Generate Password", command=generate_password, style="TButton")
-generate_button.pack(pady=10)
+generate_button.pack()
 
 save_button = ttk.Button(main_frame, text="Save Password", command=save_password, style="TButton")
-save_button.pack(pady=10)
+save_button.pack()
 
 retrieve_button = ttk.Button(main_frame, text="Retrieve Password", command=retrieve_password, style="TButton")
-retrieve_button.pack(pady=10)
+retrieve_button.pack()
 
 show_registration_frame()
 
