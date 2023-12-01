@@ -36,13 +36,13 @@ def save_password():
         messagebox.showerror("Error", "Please fill in all fields.")
 
 def retrieve_password():
-    website = website_entry.get()
+    website = website_entry.get().strip().lower()  # Normalize to lowercase and remove leading/trailing spaces
     if website:
         cipher_suite = Fernet(key)
         with open('passwords.txt', 'r') as file:
             lines = file.readlines()
             for line in lines:
-                if f"Website: {website}" in line:
+                if f"Website: {website}" in line.lower():  # Normalize to lowercase for comparison
                     encrypted_password = line.split("|")[2].strip()
                     decrypted_password = cipher_suite.decrypt(encrypted_password.encode()).decode()
                     messagebox.showinfo("Password Retrieval", f"Password for {website}: {decrypted_password}")
