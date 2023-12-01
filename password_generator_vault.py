@@ -98,7 +98,7 @@ def show_main_frame():
 
 root = tk.Tk()
 root.title("LOCK BOX")
-root.geometry("1000x480")
+root.geometry("1920x1080")
 
 key = generate_key()
 
