@@ -2,16 +2,13 @@
   "manifest_version": 2,
   "name": "Lock Box",
   "version": "1.0",
-  "description": "LOCK BOX PASSWORD MANAGER",
+  "description": "Your description here",
   "icons": {
-    "48": "icon.png",
     "128": "icon.png"
   },
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
       "128": "icon.png"
     }
   },
@@ -19,7 +16,6 @@
     "activeTab"
   ],
   "icons": {
-    "48": "icon.png",
     "128": "icon.png"
   }
 }
